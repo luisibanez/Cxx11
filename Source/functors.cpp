@@ -31,6 +31,21 @@ int count( const Container & c, P p ) {
    return cnt;
 }
 
+template <typename T>
+class printme {
+public:
+void operator()( const T & x ) {
+  std::cout << x << std::endl;
+  }
+
+};
+
+template <typename Container, typename Functor>
+void for_all( const Container & c, Functor f ) {
+   for( auto x : c ) {
+      f(x);
+   }
+}
 
 int main() {
 
@@ -49,6 +64,16 @@ int main() {
 
   std::cout << "There are " << k2 << " elements";
   std::cout << " that are less than " << th << std::endl;
+
+  printme<double> prnt;
+
+  std::cout << "Using a Functor" << std::endl;
+
+  for_all( v, prnt );
+
+  std::cout << "Using Lambda expression" << std::endl;
+
+  for_all( v, [](double & x){ std::cout << x << std::endl; } );
 
   return 0;
 }
