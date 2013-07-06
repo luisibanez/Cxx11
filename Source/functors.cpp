@@ -40,7 +40,14 @@ int main() {
 
   Less_than<double> lt(th);
 
-  std::cout << "There are " << count(v,lt) << " elements";
+  int k1 = count(v, lt );
+
+  std::cout << "There are " << k1 << " elements";
+  std::cout << " that are less than " << th << std::endl;
+
+  int k2 = count(v, [&](double a) { return a < th; } );
+
+  std::cout << "There are " << k2 << " elements";
   std::cout << " that are less than " << th << std::endl;
 
   return 0;
