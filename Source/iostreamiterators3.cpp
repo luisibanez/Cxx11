@@ -5,14 +5,10 @@
 #include <set>
 #include <algorithm>
 
-int main() {
+int main(int argc, const char * argv [] ) {
 
-  std::string inputfilename, outputfilename;
-
-  std::cin >> inputfilename >> outputfilename;
-
-  std::ifstream inputfile  { inputfilename  };
-  std::ofstream outputfile { outputfilename };
+  std::ifstream inputfile  { argv[1] };
+  std::ofstream outputfile { argv[2] };
 
   using istritr = std::istream_iterator< std::string >;
   using ostritr = std::ostream_iterator< std::string >;
