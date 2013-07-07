@@ -1,0 +1,20 @@
+Most of the code snippets in this directory were taken from the book
+
+     "The C++ Programming Language"
+     4th Edition
+
+     Bjarne Stroustup
+
+You will find versions closer to the original at
+
+     http://www.stroustrup.com/C++11FAQ.html
+
+The versions in this current repository have been reworked with minor
+retouches, mostly intended to help me understand the examples.
+
+Any errors are definitely and most certainly mine.  :-)
+
+Suggestions on how to improve the examples will be greately appreciated.
+
+I would like to convert this into a tutorial on C++11 for C++98 developers.
+
