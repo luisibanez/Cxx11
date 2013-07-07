@@ -5,6 +5,7 @@
 #include <random>
 #include <iostream>
 #include <functional>
+#include <vector>
 
 int main() {
 
@@ -16,8 +17,21 @@ int main() {
 
    auto die = std::bind( one_to_six, re );
 
-   for( int i=0; i<50; ++i ) {
-      std::cout << die() << std::endl;
+   std::vector<int> histogram(6+1);
+
+   histogram.assign(histogram.size(),0);
+
+   for( int i=0; i<500; ++i ) {
+      ++histogram[die()];
+      }
+
+   // note that we started at 1, and go up to 6
+   for( int i = 1; i < histogram.size(); ++i ) {
+      std::cout << i << " : ";
+      for( int k = 0; k < histogram[i]; ++k ) {
+        std::cout << "*";
+        }
+      std::cout << std::endl;
       }
 
    return 0;
